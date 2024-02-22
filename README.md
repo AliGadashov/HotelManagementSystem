@@ -11,10 +11,7 @@ Staff Management Module: Streamlines staff scheduling, payroll processing, and p
 Reporting and Analytics Module: Provides insights into key performance metrics, occupancy rates, revenue trends, and guest feedback. Enables data-driven decision-making and performance monitoring.
 ## Usage
 * Clone the repository:
-git clone https://github.com/your-username/hotel-management-system.git
-* Install dependencies:
-cd HotelManagementSystem
-npm install
+git clone https://github.com/AliGadashov/HotelManagementSystem.git
 * Configure the system by editing the configuration files and environment variables.
 
 * Run the system:
