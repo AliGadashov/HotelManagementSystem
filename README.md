@@ -12,8 +12,3 @@ Reporting and Analytics Module: Provides insights into key performance metrics, 
 ## Usage
 * Clone the repository:
 git clone https://github.com/AliGadashov/HotelManagementSystem.git
-* Configure the system by editing the configuration files and environment variables.
-
-* Run the system:
-
-npm start
