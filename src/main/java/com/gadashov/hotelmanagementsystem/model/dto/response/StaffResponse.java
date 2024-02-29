@@ -1,13 +1,9 @@
 package com.gadashov.hotelmanagementsystem.model.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.gadashov.hotelmanagementsystem.model.entity.Hotel;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 /**
  * Author: Ali Gadashov

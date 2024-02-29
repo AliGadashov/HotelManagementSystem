@@ -4,9 +4,11 @@ import com.gadashov.hotelmanagementsystem.model.dto.request.CreatePaymentRequest
 import com.gadashov.hotelmanagementsystem.model.dto.request.UpdatePaymentRequest;
 import com.gadashov.hotelmanagementsystem.model.dto.response.PaymentResponse;
 import com.gadashov.hotelmanagementsystem.service.PaymentService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,7 +28,7 @@ public class PaymentController {
 
     @PostMapping
     public ResponseEntity<Void> createPayment(
-            @RequestBody CreatePaymentRequest request
+            @RequestBody @Valid CreatePaymentRequest request
     ){
         paymentService.createPayment(request);
         return ResponseEntity.status(HttpStatus.CREATED).build();
@@ -35,7 +37,7 @@ public class PaymentController {
     @PutMapping("/{id}")
     public ResponseEntity<Void> updatePaymentById(
             @PathVariable Long id,
-            @RequestBody UpdatePaymentRequest request
+            @RequestBody @Valid UpdatePaymentRequest request
     ){
         paymentService.updatePaymentById(id,request);
         return ResponseEntity.ok().build();

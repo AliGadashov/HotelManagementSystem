@@ -3,7 +3,6 @@ package com.gadashov.hotelmanagementsystem.model.dto.response;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 /**
  * Author: Ali Gadashov

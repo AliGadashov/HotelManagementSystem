@@ -4,9 +4,11 @@ import com.gadashov.hotelmanagementsystem.model.dto.request.CreateBookingRequest
 import com.gadashov.hotelmanagementsystem.model.dto.request.UpdateBookingRequest;
 import com.gadashov.hotelmanagementsystem.model.dto.response.BookingResponse;
 import com.gadashov.hotelmanagementsystem.service.BookingService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,7 +27,7 @@ public class BookingController {
 
     @PostMapping
     public ResponseEntity<Void> createBooking(
-            @RequestBody CreateBookingRequest request
+            @RequestBody @Valid CreateBookingRequest request
     ){
         bookingService.createBooking(request);
         return ResponseEntity.status(HttpStatus.CREATED).build();
@@ -34,7 +36,7 @@ public class BookingController {
     @PutMapping("/{id}")
     public ResponseEntity<Void> updateBookingById(
             @PathVariable Long id,
-            @RequestBody UpdateBookingRequest request
+            @RequestBody @Valid UpdateBookingRequest request
     ){
         bookingService.updateBookingById(id,request);
         return ResponseEntity.ok().build();

@@ -16,7 +16,10 @@ public enum Exceptions {
     HOTEL_NOT_FOUND("Hotel not found!", HttpStatus.NOT_FOUND),
     STAFF_NOT_FOUND("Staff not found!", HttpStatus.NOT_FOUND),
     BOOKING_NOT_FOUND("Booking not found!", HttpStatus.NOT_FOUND),
-    PAYMENT_NOT_FOUND("Payment not found!", HttpStatus.NOT_FOUND);
+    PAYMENT_NOT_FOUND("Payment not found!", HttpStatus.NOT_FOUND),
+    GUEST_REVIEW_NOT_FOUND("Guest review not found!", HttpStatus.NOT_FOUND ),
+    GUEST_REVIEW_NOT_FOUND_WITH_ID("Guest review not found with id", HttpStatus.NOT_FOUND  ),
+    GUEST_REVIEW_ALREADY_EXIST("Guest review already exist!", HttpStatus.MULTI_STATUS);
 
 
     private final String message;

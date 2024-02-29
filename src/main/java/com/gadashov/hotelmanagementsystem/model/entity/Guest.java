@@ -6,7 +6,6 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -41,8 +40,17 @@ public class Guest {
     @ToString.Exclude
     List<Booking> booking;
 
-    @ManyToOne
-    @JoinColumn( name = "hotel_id")
+    @OneToMany(mappedBy = "guest")
     @ToString.Exclude
-    Hotel hotel;
+    List<GuestReview> guestReviews;
+
+    @ManyToMany
+    @JoinTable(
+            name = "guest_hotel",
+            joinColumns = @JoinColumn(name = "guest_id"),
+            inverseJoinColumns = @JoinColumn(name = "hotel_id")
+    )
+    @ToString.Exclude
+    List<Hotel> hotels;
+
 }

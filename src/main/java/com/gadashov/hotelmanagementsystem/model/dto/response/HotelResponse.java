@@ -1,11 +1,6 @@
 package com.gadashov.hotelmanagementsystem.model.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.gadashov.hotelmanagementsystem.model.entity.Guest;
-import com.gadashov.hotelmanagementsystem.model.entity.Room;
-import com.gadashov.hotelmanagementsystem.model.entity.Staff;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 

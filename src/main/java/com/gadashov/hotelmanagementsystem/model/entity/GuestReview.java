@@ -1,5 +1,6 @@
 package com.gadashov.hotelmanagementsystem.model.entity;
 
+import com.gadashov.hotelmanagementsystem.model.enums.ReviewType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -24,17 +25,29 @@ public class GuestReview {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    Long id;
 
     @Min(0)
     @Max(10)
-    private Integer rating;
+    Integer rating;
 
-    // Other fields like comment, guest details, etc.
+
 
     @ManyToOne
     @JoinColumn(name = "hotel_id")
     @ToString.Exclude
-    private Hotel hotel;
+    Hotel hotel;
+
+    @ManyToOne
+    @JoinColumn(name = "guest_id")
+    @ToString.Exclude
+    Guest guest;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "room_id")
+    Room room;
+
+    @Enumerated(EnumType.STRING)
+    ReviewType reviewType;
 
 }

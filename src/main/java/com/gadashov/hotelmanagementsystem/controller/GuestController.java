@@ -4,9 +4,11 @@ import com.gadashov.hotelmanagementsystem.model.dto.request.CreateGuestRequest;
 import com.gadashov.hotelmanagementsystem.model.dto.request.UpdateGuestRequest;
 import com.gadashov.hotelmanagementsystem.model.dto.response.GuestResponse;
 import com.gadashov.hotelmanagementsystem.service.GuestService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,7 +27,7 @@ public class GuestController {
 
     @PostMapping
     public ResponseEntity<Void> createGuest(
-            @RequestBody CreateGuestRequest request
+            @RequestBody @Valid CreateGuestRequest request
     ){
         guestService.createGuest(request);
         return ResponseEntity.status(HttpStatus.CREATED).build();
@@ -34,7 +36,7 @@ public class GuestController {
     @PutMapping("/{id}")
     public ResponseEntity<Void> updateGuestById(
             @PathVariable Long id,
-            @RequestBody UpdateGuestRequest request
+            @RequestBody @Valid UpdateGuestRequest request
     ){
         guestService.updateGuestById(id,request);
         return ResponseEntity.ok().build();

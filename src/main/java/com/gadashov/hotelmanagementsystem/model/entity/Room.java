@@ -32,4 +32,6 @@ public class Room {
     @JoinColumn(name = "roomType_id")
     @ToString.Exclude
     RoomType roomType;
+
+
 }

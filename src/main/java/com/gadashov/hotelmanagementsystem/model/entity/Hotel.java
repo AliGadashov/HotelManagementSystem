@@ -42,7 +42,6 @@ public class Hotel {
     @Max(5)
     Integer stars;
 
-
     Double averageRating;
 
     @CreationTimestamp
@@ -58,15 +57,8 @@ public class Hotel {
     @ToString.Exclude
     List<Room> rooms;
 
-
-    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "hotels")
     @ToString.Exclude
     List<Guest> guests;
-
-
-    @OneToMany(mappedBy = "hotel")
-    @ToString.Exclude
-    List<GuestReview> guestReviews;
-
 
 }

@@ -4,9 +4,11 @@ import com.gadashov.hotelmanagementsystem.model.dto.request.CreateRoomTypeReques
 import com.gadashov.hotelmanagementsystem.model.dto.request.UpdateRoomTypeRequest;
 import com.gadashov.hotelmanagementsystem.model.dto.response.RoomTypeResponse;
 import com.gadashov.hotelmanagementsystem.service.RoomTypeService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,7 +27,7 @@ public class RoomTypeController {
 
     @PostMapping
     public ResponseEntity<Void> createRoomType(
-            @RequestBody CreateRoomTypeRequest request
+            @RequestBody @Valid CreateRoomTypeRequest request
     ){
         roomTypeService.createRoomType(request);
         return ResponseEntity.status(HttpStatus.CREATED).build();
@@ -34,7 +36,7 @@ public class RoomTypeController {
     @PutMapping("/{id}")
     public ResponseEntity<Void> updateRoomTypeById(
             @PathVariable Long id,
-            @RequestBody UpdateRoomTypeRequest request
+            @RequestBody @Valid UpdateRoomTypeRequest request
     ){
         roomTypeService.updateRoomTypeById(id,request);
         return ResponseEntity.ok().build();

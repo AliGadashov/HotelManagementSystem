@@ -7,8 +7,6 @@ import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-
 /**
  * Author: Ali Gadashov
  * Version: v1.0
