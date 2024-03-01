@@ -39,7 +39,7 @@ public class GlobalExceptionHandler extends DefaultErrorAttributes {
                 .body(errorAttributes);
     }
 
-    @ExceptionHandler(GlobalException.class)
+    @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, Object>> handle(MethodArgumentNotValidException ex, WebRequest request){
         Map<String, Object> errorAttributes = getErrorAttributes(request, ErrorAttributeOptions.defaults());
         Map<String, Object> invalidFields = new HashMap<>();

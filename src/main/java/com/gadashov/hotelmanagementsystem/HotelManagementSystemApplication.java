@@ -15,4 +15,13 @@ public class HotelManagementSystemApplication {
         SpringApplication.run(HotelManagementSystemApplication.class, args);
     }
 
+
+//    Last commit: GlobalExceptionHandler updated
+//    192.168.0.228
+//    TODO: Make authentication and authorization
+//    TODO: Make Security
+//    TODO: Use liquibase
+//    TODO: Use i18n
+//    TODO: add new entities ->
+//    TODO: at the end add comments
 }
