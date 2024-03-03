@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - includeAll:
+      path: liquibase/booking
+  - includeAll:
+      path: liquibase/guest
+  - includeAll:
+      path: liquibase/guestReview
+  - includeAll:
+      path: liquibase/hotel
+  - includeAll:
+      path: liquibase/payment
+  - includeAll:
+      path: liquibase/room
+  - includeAll:
+      path: liquibase/roomType
+  - includeAll:
+      path: liquibase/staff

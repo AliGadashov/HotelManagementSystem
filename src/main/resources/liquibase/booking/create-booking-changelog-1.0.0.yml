@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_booking_table
+      author: aligadashov
+      changes:
+        - createTable:
+            tableName: Booking
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: totalPrice
+                  type: DECIMAL(10,2)
+              - column:
+                  name: checkInTime
+                  type: TIMESTAMP
+              - column:
+                  name: checkOutTime
+                  type: TIMESTAMP
+              - column:
+                  name: room_id
+                  type: BIGINT
+              - column:
+                  name: guest_id
+                  type: BIGINT
+  - changeSet:
+      id: add_foreign_keys_to_booking
+      author: aligadashov
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: Room
+            baseColumnNames: id
+            referencedTableName: Booking
+            referencedColumnNames: room_id
+            constraintName: FK_Room_Booking
+            onDelete: CASCADE
+        - addForeignKeyConstraint:
+            baseTableName: Guest
+            baseColumnNames: id
+            referencedTableName: Booking
+            referencedColumnNames: guest_id
+            constraintName: FK_Guest_Booking
+            onDelete: CASCADE

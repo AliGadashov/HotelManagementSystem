@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_room_type_table
+      author: aligadashov
+      changes:
+        - createTable:
+            tableName: RoomType
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: capacity
+                  type: INTEGER
+              - column:
+                  name: pricePerNight
+                  type: DECIMAL(19,2)

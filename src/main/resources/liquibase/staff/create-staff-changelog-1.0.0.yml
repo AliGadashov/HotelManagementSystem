@@ -1,0 +1,56 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_staff_table
+      author: aligadashov
+      changes:
+        - createTable:
+            tableName: Staff
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: firstName
+                  type: VARCHAR(255)
+              - column:
+                  name: lastName
+                  type: VARCHAR(255)
+              - column:
+                  name: position
+                  type: VARCHAR(255)
+              - column:
+                  name: phone
+                  type: VARCHAR(20)
+                  constraints:
+                    unique: true
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+                  constraints:
+                    unique: true
+              - column:
+                  name: salary
+                  type: DECIMAL(10,2)
+              - column:
+                  name: dateOfBirth
+                  type: DATE
+              - column:
+                  name: hireDate
+                  type: DATE
+              - column:
+                  name: hotel_id
+                  type: BIGINT
+  - changeSet:
+      id: add_foreign_key_to_staff
+      author: aligadashov
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: Hotel
+            baseColumnNames: id
+            referencedTableName: Staff
+            referencedColumnNames: hotel_id
+            constraintName: FK_Hotel_Staff
+            onDelete: CASCADE

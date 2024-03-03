@@ -16,12 +16,16 @@ public class HotelManagementSystemApplication {
     }
 
 
+//    liquibase added
+
 //    Last commit: GlobalExceptionHandler updated
 //    192.168.0.228
+//    TODO: Use liquibase
 //    TODO: Make authentication and authorization
 //    TODO: Make Security
-//    TODO: Use liquibase
-//    TODO: Use i18n
+//    TODO: add SendEmail
 //    TODO: add new entities ->
+//    TODO: add Logs
+//    TODO: Use i18n (En sonda)
 //    TODO: at the end add comments
 }
