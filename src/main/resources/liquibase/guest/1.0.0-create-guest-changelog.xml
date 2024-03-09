@@ -22,6 +22,10 @@ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
                     type="VARCHAR(255)"/>
             <column name="email"
                     type="VARCHAR(255)"/>
+            <column name="password"
+                    type="VARCHAR(255)"/>
+            <column name="is_enable"
+                    type="boolean"/>
             <column name="date_of_birth"
                     type="DATE"/>
         </createTable>

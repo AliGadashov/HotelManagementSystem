@@ -1,6 +1,7 @@
 package com.gadashov.hotelmanagementsystem.controller;
 
 import com.gadashov.hotelmanagementsystem.model.dto.request.CreateGuestRequest;
+import com.gadashov.hotelmanagementsystem.model.dto.request.ResetPasswordRequest;
 import com.gadashov.hotelmanagementsystem.model.dto.request.UpdateGuestRequest;
 import com.gadashov.hotelmanagementsystem.model.dto.response.GuestResponse;
 import com.gadashov.hotelmanagementsystem.service.GuestService;
@@ -8,7 +9,6 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,13 +25,42 @@ public class GuestController {
 
     private final GuestService guestService;
 
-    @PostMapping
-    public ResponseEntity<Void> createGuest(
+    @PostMapping("/registration")
+    public ResponseEntity<Void> registration(
             @RequestBody @Valid CreateGuestRequest request
     ){
-        guestService.createGuest(request);
+        guestService.registration(request);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
+
+    @PostMapping("/confirmation")
+    public ResponseEntity<Void> confirmation(
+            @RequestParam String token
+    ){
+        guestService.confirmation(token);
+        return ResponseEntity.ok().build();
+    }
+
+    @RequestMapping(value = "/renew-password/{username}",
+    method = {RequestMethod.GET, RequestMethod.POST})
+    public ResponseEntity<String> renewPassword(
+            @PathVariable String username
+    ){
+        guestService.renewPassword(username);
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/reset-password")
+    public ResponseEntity<String> resetPassword(
+            @RequestParam Integer otp,
+            @RequestParam String username,
+            @RequestBody ResetPasswordRequest request
+    ){
+        guestService.resetPassword(username,otp, request);
+        return ResponseEntity.ok().build();
+    }
+
+
 
     @PutMapping("/{id}")
     public ResponseEntity<Void> updateGuestById(

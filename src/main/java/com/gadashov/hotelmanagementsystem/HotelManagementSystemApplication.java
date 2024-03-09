@@ -15,16 +15,4 @@ public class HotelManagementSystemApplication {
         SpringApplication.run(HotelManagementSystemApplication.class, args);
     }
 
-
-//
-
-//    Last commit: liquibase added
-//    192.168.0.228
-//    TODO: Make authentication and authorization
-//    TODO: Make Security
-//    TODO: add SendEmail
-//    TODO: add new entities ->
-//    TODO: add Logs
-//    TODO: Use i18n (En sonda)
-//    TODO: at the end add comments
 }

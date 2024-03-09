@@ -19,7 +19,10 @@ public enum Exceptions {
     PAYMENT_NOT_FOUND("Payment not found!", HttpStatus.NOT_FOUND),
     GUEST_REVIEW_NOT_FOUND("Guest review not found!", HttpStatus.NOT_FOUND ),
     GUEST_REVIEW_NOT_FOUND_WITH_ID("Guest review not found with id", HttpStatus.NOT_FOUND  ),
-    GUEST_REVIEW_ALREADY_EXIST("Guest review already exist!", HttpStatus.MULTI_STATUS);
+    GUEST_REVIEW_ALREADY_EXIST("Guest review already exist!", HttpStatus.MULTI_STATUS),
+    OTP_NOT_FOUND("Otp not found!", HttpStatus.NOT_FOUND),
+    TOKEN_NOT_FOUND("Token not found!", HttpStatus.NOT_FOUND),
+    PASSWORDS_NOT_MATCH("Passwords  not matches",HttpStatus.BAD_REQUEST );
 
 
     private final String message;

@@ -34,6 +34,11 @@ public class Guest {
     @Column(unique = true)
     String email;
 
+    String password;
+
+    @Builder.Default
+    Boolean isEnable = false;
+
     LocalDate dateOfBirth;
 
     @OneToMany(mappedBy = "guest")

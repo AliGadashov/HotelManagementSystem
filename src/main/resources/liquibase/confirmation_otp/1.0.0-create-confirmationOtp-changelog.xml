@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <changeSet id="create_confirmation_otp_table" author="aligadashov">
+        <createTable tableName="confirmation_otp">
+            <column autoIncrement="true"
+                    name="id"
+                    type="BIGINT">
+                <constraints nullable="false"
+                             primaryKey="true"
+                             primaryKeyName="PK_CONFIRMATION_OTP"/>
+            </column>
+            <column name="expired_time"
+                    type="DATETIME"/>
+            <column name="guest_id"
+                    type="BIGINT"/>
+            <column name="otp" type="INTEGER"/>
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="guest_id"
+                                 baseTableName="confirmation_otp"
+                                 constraintName="FK_confirmation_otp_ON_GUEST"
+                                 referencedColumnNames="id"
+                                 referencedTableName="guest"/>
+
+    </changeSet>
+</databaseChangeLog>

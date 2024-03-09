@@ -1,6 +1,8 @@
 package com.gadashov.hotelmanagementsystem.model.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Pattern;
 
 import java.time.LocalDate;
 
@@ -18,7 +20,10 @@ public record UpdateGuestRequest(
         String lastName,
         String address,
         String phone,
+        @Email
         String email,
+        @Pattern(regexp = "^[a-zA-Z0-9]{8,}$")
+        String password,
         @JsonProperty("date_of_birth")
         LocalDate dateOfBirth
 

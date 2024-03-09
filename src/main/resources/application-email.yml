@@ -1,0 +1,23 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: gadashovali13@gmail.com
+    password: xidg camh mpbs kjtw
+    default-encoding: UTF-8
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  application:
+    mail:
+      host: localhost
+      http: http://
+      confirmation: /guest/confirmation?token=
+      reset-password: /guest/reset-password
+      username: ?username=
+      otp: otp

@@ -4,3 +4,5 @@ spring:
       - db
       - swagger
       - liquibase
+      - email
+      - constant

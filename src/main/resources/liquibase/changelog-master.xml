@@ -12,4 +12,6 @@
     <includeAll path="liquibase/booking"/>
     <includeAll path="liquibase/guestReview"/>
     <includeAll path="liquibase/payment"/>
+    <includeAll path="liquibase/confirmation_token"/>
+    <includeAll path="liquibase/confirmation_otp"/>
 </databaseChangeLog>
