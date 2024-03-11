@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/hotelManagementSystem
-    username: postgres
-    password: 1317
+    username: 
+    password: 
   jpa:
     generate-ddl: true
     hibernate:
